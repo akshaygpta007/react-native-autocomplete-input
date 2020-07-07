@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
-  FlatList,
   Platform,
   StyleSheet,
   Text,
@@ -9,6 +8,7 @@ import {
   View,
   ViewPropTypes as RNViewPropTypes
 } from 'react-native';
+import { KeyboardAwareFlatList } from 'react-native-keyboard-aware-scroll-view';
 
 // Keep this line for downwards compatibility with RN.
 // eslint-disable-next-line react/forbid-foreign-prop-types
@@ -151,7 +151,7 @@ class Autocomplete extends Component {
     } = this.props;
 
     return (
-      <FlatList
+      <KeyboardAwareFlatList
         ref={this.onRefListView}
         data={data}
         keyboardShouldPersistTaps={keyboardShouldPersistTaps}
